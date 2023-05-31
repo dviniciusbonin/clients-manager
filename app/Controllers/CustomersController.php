@@ -8,6 +8,8 @@ class CustomersController extends BaseController
 {
 	public function index()
 	{
-		return view('clientes', ["title" => "Clientes cadastrados"]);
+		$session = session();
+		$user_id = $session->get('user_id');
+		return view('clientes', ["title" => "Clientes cadastrados", "user_id" => $user_id]);
 	}
 }

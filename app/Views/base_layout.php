@@ -16,7 +16,9 @@
         <div class="container d-flex justify-content-center align-items-center p-1">
             <a class="navbar-brand mx-auto fs-3" href="/clientes">Gerenciador de clientes</a>
             <div class="ml-auto">
-                <a class="btn btn-danger" href="/logout">Sair</a>
+                <?php if (isset($user_id)) : ?>
+                    <a class="btn btn-danger" href="/logout">Sair</a>
+                <?php endif; ?>
             </div>
         </div>
     </nav>
