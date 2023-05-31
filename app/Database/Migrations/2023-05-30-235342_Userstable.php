@@ -27,13 +27,10 @@ class Userstable extends Migration
 				'type' => 'VARCHAR',
 				'constraint' => '100'
 			],
-			'address' => [
-				'type' => 'TEXT',
-				'null' => true
-			],
 			'password' => [
 				'type' => 'VARCHAR',
-				'constraint' => '100'
+				'constraint' => '100',
+				'null' => true
 			],
 			'is_admin' => [
 				'type' => 'TINYINT',

@@ -14,7 +14,6 @@ class UserSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => password_hash('admin', PASSWORD_BCRYPT),
             'phone' => '',
-            'address' => '',
             'is_admin' => 1
         ];
 
