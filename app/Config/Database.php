@@ -32,12 +32,12 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'localhost',
-		'username' => '',
-		'password' => '',
-		'database' => '',
-		'DBDriver' => 'MySQLi',
-		'DBPrefix' => '',
+		// 'hostname' => '127.0.0.1',
+		// 'username' => '',
+		// 'password' => '',
+		'database' => 'database.sqlite',
+		'DBDriver' => 'SQLite3',
+		'DBPrefix' => '',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
 		'pConnect' => false,
 		'DBDebug'  => (ENVIRONMENT !== 'production'),
 		'charset'  => 'utf8',
@@ -47,7 +47,7 @@ class Database extends Config
 		'compress' => false,
 		'strictOn' => false,
 		'failover' => [],
-		'port'     => 3306,
+		// 'port'     => 3306,
 	];
 
 	/**
@@ -63,7 +63,7 @@ class Database extends Config
 		'password' => '',
 		'database' => ':memory:',
 		'DBDriver' => 'SQLite3',
-		'DBPrefix' => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
+		'DBPrefix' => 'db_tests_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
 		'pConnect' => false,
 		'DBDebug'  => (ENVIRONMENT !== 'production'),
 		'charset'  => 'utf8',

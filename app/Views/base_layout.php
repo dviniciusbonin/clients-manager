@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +10,21 @@
     <style>
     </style>
 </head>
+
 <body class="vh-100">
-    <nav class="navbar bg-dark">
-    <div class="container-fluid p-3 d-flex justify-content-center">
-        <span class="navbar-brand mb-0 h1 text-light text-center fs-3">Gerenciador de clientes</span>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container d-flex justify-content-center align-items-center p-1">
+            <a class="navbar-brand mx-auto fs-3" href="/clientes">Gerenciador de clientes</a>
+            <div class="ml-auto">
+                <a class="btn btn-danger" href="/logout">Sair</a>
+            </div>
+        </div>
     </nav>
-   <div class="vh-100 container">
+    <div class="vh-100 container">
         <?= $this->renderSection('content') ?>
-   </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/d7f03c7d8d.js" crossorigin="anonymous"></script>
+
 </html>
