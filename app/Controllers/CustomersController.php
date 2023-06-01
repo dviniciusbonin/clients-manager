@@ -8,6 +8,15 @@ use App\Models\Address;
 
 class CustomersController extends BaseController
 {
+	public function findById($id)
+	{
+		$userModel = new User();
+
+		$customer = $userModel->findById($id);
+
+		return json_encode($customer);
+	}
+
 	public function index()
 	{
 		$session = session();
@@ -50,5 +59,43 @@ class CustomersController extends BaseController
 			var_dump($e);
 			die;
 		}
+	}
+	public function update()
+	{
+		try {
+			$id = $this->request->getVar('user-id');
+			$userData = [
+				'name' => $this->request->getVar('name'),
+				'email' => $this->request->getVar('email'),
+				'phone' => $this->request->getVar('phone')
+			];
+
+			$addressData = [
+				'cep' => $this->request->getVar('cep'),
+				'street' => $this->request->getVar('street'),
+				'neighborhood' => $this->request->getVar('neighborhood'),
+				'city' => $this->request->getVar('city'),
+				'uf' => $this->request->getVar('uf')
+			];
+
+			$userModel = new User();
+
+			$updateUser = $userModel->edit($id, $userData);
+
+			$addressModel = new Address();
+			$address = $addressModel->getUserAddress($id);
+			$addressModel->update($address['id'], $addressData);
+		} catch (\Exception $e) {
+			var_dump($e);
+			die;
+		}
+	}
+
+	public function remove($id)
+	{
+		$userModel = new User();
+		$userModel->delete($id);
+
+		return redirect()->to('/clientes');
 	}
 }

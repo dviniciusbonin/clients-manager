@@ -26,9 +26,4 @@ class Address extends Model
 	{
 		return $this->where('user_id', $userId)->first();
 	}
-
-	public function user()
-	{
-		return $this->belongsTo(User::class, 'user_id');
-	}
 }

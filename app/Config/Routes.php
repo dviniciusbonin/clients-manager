@@ -33,8 +33,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->group('', ['filter' => 'auth'], function ($routes) {
+	$routes->get('/clientes/(:num)', 'CustomersController::findById/$1');
 	$routes->get('/clientes', 'CustomersController::index');
 	$routes->post('/clientes', 'CustomersController::create');
+	$routes->post('/clientes/editar', 'CustomersController::update/$1');
+	$routes->post('/clientes/delete/(:num)', 'CustomersController::remove/$1');
 	$routes->get('/logout', 'AuthController::logout');
 });
 
