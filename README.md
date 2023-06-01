@@ -61,3 +61,18 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
 - xml (enabled by default - don't turn it off)
+
+
+# Para executar 
+Instale as dependencias com ```composer install```
+
+Execute as migrations com ```php spark migrate```
+
+Execute as seeders com ```php spark db:seed UserSeeder```
+
+Execute o servidor com ```php spark serve```
+
+Por padrão a aplicação estara disponivel em http://localhost:8080/
+
+### Obs: Importante verificar se a porta 8080 já não esta em uso
+
